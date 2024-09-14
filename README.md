@@ -1,4 +1,4 @@
-![CI/CD](https://github.com/github/docs/actions/workflows/rust.yml/badge.svg)
+![CI/CD](https://github.com/RobinCamarasa/DRYer/actions/workflows/rust.yml/badge.svg)
 
 # DRYer
 
