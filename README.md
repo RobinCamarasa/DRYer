@@ -1,3 +1,5 @@
+![CI/CD](https://github.com/github/docs/actions/workflows/rust.yml/badge.svg)
+
 # DRYer
 
 DRYer (Do not Repeat Yourself) aims to be a **minimilastic**, **non-intrusive**, (yet powerfull) **substitution** language.
