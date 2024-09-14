@@ -2,6 +2,10 @@
 
 # DRYer
 
+
+> [!NOTE]  
+>  Most of the functionalities presented in this README are yet to be implemented
+
 DRYer (Do not Repeat Yourself) aims to be a **minimilastic**, **non-intrusive**, (yet powerfull) **substitution** language.
 
 - **minimalistic**: very simple syntax
@@ -48,8 +52,6 @@ color: red
 - [cargo](https://doc.rust-lang.org/stable/cargo/)
 
 ## Usage
-
-> Most of the functionalities presented in this README are yet to be implemented
 
 - Install the binary (very experimental)
 ```bash
