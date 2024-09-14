@@ -10,6 +10,9 @@ enum Token {
     #[token("\n", priority = 3)]
     EOL,
 
+    #[token(";", priority = 3)]
+    EOI,
+
     #[token("[[")]
     StartBlock,
 
@@ -22,25 +25,32 @@ enum Token {
     #[regex(r"match")]
     MatchKeyword,
 
+    #[token("|>")]
+    StartArm,
+
+    #[regex(r":")]
+    StartSubstitutionList,
+
+    #[regex(r"->")]
+    SubstitutionOperator,
+
     #[regex(r"=")]
     Assignment,
 
     #[regex(r"(\./|/)[a-zA-Z0-9_]+\.[a-z]+")]
     FileName,
 
-    #[token(";")]
-    Semicolon,
-
     #[regex(r"[ \t\n\r]+")]
     Whitespace,
 
-    #[regex(r"[a-zA-Z0-9_]+\.[a-z]+")]
+    #[regex(r"[a-zA-Z0-9_]+")]
     Litteral,
 }
 
 #[rstest]
 #[case("' [[ FILES = ./bowser.puml ./wario.puml ./waluigi.puml;]]\n")]
 #[case("' [[ match FILES\n")]
+#[case("' |> ./wario.puml : Mario -> Wario; mario -> wario;\n")]
 #[case("' ]]\n")]
 fn test_individual_parsing(#[case] case: &str) -> Result<()> {
     let mut lexer = Token::lexer(case);
