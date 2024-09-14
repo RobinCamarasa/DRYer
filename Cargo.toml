@@ -1,0 +1,9 @@
+[package]
+name = "dryer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.88"
+logos = "0.14.1"
+rstest = "0.22.0"
