@@ -19,6 +19,9 @@ enum Token {
     #[regex(r"FILES")]
     FilesKeyword,
 
+    #[regex(r"match")]
+    MatchKeyword,
+
     #[regex(r"=")]
     Assignment,
 
@@ -36,7 +39,9 @@ enum Token {
 }
 
 #[rstest]
-#[case("' [[ FILES = ./bowser.puml ./wario.puml ./waluigi.puml;]]")]
+#[case("' [[ FILES = ./bowser.puml ./wario.puml ./waluigi.puml;]]\n")]
+#[case("' [[ match FILES\n")]
+#[case("' ]]\n")]
 fn test_individual_parsing(#[case] case: &str) -> Result<()> {
     let mut lexer = Token::lexer(case);
 
